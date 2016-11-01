@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import CacaduFramework
+import CGRectAlignmentExtensions
 
 class RectAlignmentExtensionTests: XCTestCase {
     var container: CGRect!

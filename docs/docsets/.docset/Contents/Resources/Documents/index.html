@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+
+
+    <a title="  Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="index.html">
+           Docs
+        </a>
+         (100% documented)
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="index.html"> Reference</a>
+      <img class="carat" src="img/carat.png" />
+        Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/HorizontalAlignment.html">HorizontalAlignment</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/VerticalAlignment.html">VerticalAlignment</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/CGRect.html">CGRect</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            
+            <a href='#cgrectalignmentextensions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='cgrectalignmentextensions'>CGRectAlignmentExtensions</h1>
+
+<p>CGRectAlignmentExtensions is a library that makes it easy to align rectangle to each other. It contains function to align, aspect fit and aspect fill rectangles based a container rectangle.</p>
+
+<ul>
+<li>By: <a href="http://www.cacadu.nl">Marco Jonker</a></li>
+<li>Swift: <a href="http://www.swift.org">^3.*</a></li>
+<li>Source: <a href="www.cacadu.nl">github</a></li>
+<li>Docs: <a href="">cocoadocs</a></li>
+</ul>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='installation'>Installation</h3>
+<pre class="highlight plaintext"><code>pod install ....
+</code></pre>
+<a href='#example-1-align' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-1-align'>Example 1 - align</h3>
+
+<p>Align a rectangle horizontally to the right outside and vertically to the center of another rectangle</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">rect2</span><span class="o">.</span><span class="nf">align</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">leftOutside</span><span class="p">,</span> <span class="nv">and</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span>
+</code></pre>
+<a href='#example-2-aligned' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-2-aligned'>Example 2 - aligned</h3>
+
+<p>Create an new aligned rectangle horizontally stretched and vertically aligned to the bottom</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">aligned</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">stretchInside</span><span class="p">,</span> <span class="nv">and</span><span class="p">:</span> <span class="o">.</span><span class="n">bottomInside</span><span class="p">)</span>
+</code></pre>
+<a href='#example-3-center' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-3-center'>Example 3 - center</h3>
+
+<p>Center a rectangle</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">rect2</span><span class="o">.</span><span class="nf">center</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+</code></pre>
+<a href='#example-4-centered' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-4-centered'>Example 4 - centered</h3>
+
+<p>Create a new centered rectangle</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">centered</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+</code></pre>
+<a href='#example-5-aspectfit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-5-aspectfit'>Example 5 - aspectFit</h3>
+
+<p>Aspect fit a rectangle into a container</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFit</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+</code></pre>
+<a href='#example-6-aspectfitted' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-6-aspectfitted'>Example 6 - aspectFitted</h3>
+
+<p>Create a new rectangle of a rectangle that is aspect fitted into a container</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFitted</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+</code></pre>
+<a href='#example-7-aspectfill' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-7-aspectfill'>Example 7 - aspectFill</h3>
+
+<p>Aspect fit a rectangle into a container</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFill</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+</code></pre>
+<a href='#example-7-aspectfilled' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='example-7-aspectfilled'>Example 7 - aspectFilled</h3>
+
+<p>Create a new rectangle of a rectangle that is aspect filled into a container</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
+
+<span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFilled</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+</code></pre>
+
+          </div>
+        </section>
+
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2016 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2016-11-01)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

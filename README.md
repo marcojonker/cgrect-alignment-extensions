@@ -115,4 +115,4 @@ let rect3 = rect2.aspectFilled(in: rect1)
 
 * Created by: [Marco Jonker](http://www.cacadu.nl)
 * Swift version: [^3.*](http://www.swift.org)
-* Documentation: [cocoadocs](https://cocoapods.org/pods/CGRectAlignmentExtensions)
+* Documentation: [cocoadocs](http://cocoadocs.org/docsets/CGRectAlignmentExtensions/1.0.5/)

@@ -2,19 +2,24 @@
 
 CGRectAlignmentExtensions is a library that makes it easy to align rectangle to each other. It contains function to align, aspect fit and aspect fill rectangles based a container rectangle.
 
-* By: [Marco Jonker](http://www.cacadu.nl)
-* Swift: [^3.*](http://www.swift.org)
-* Source: [github](www.cacadu.nl)
-* Docs: [cocoadocs]()
-
-
 ### Installation
 
+1. Create a file name 'Podfile'
+
 ```
-pod install ....
+target '<PROJECT_NAME>' do
+  use_frameworks!
+  pod 'CGRectAlignmentExtensions', '>= 1.0'
+end
 ```
 
+2. In the terminal in your project folder Run 'pod install' from 
 
+```
+pod install
+```
+
+For more information about installing cocoapods see: [cocoapos](https://cocoapods.org)
 
 ### Example 1 - align
 
@@ -105,3 +110,9 @@ let rect2 = CGRect(90, 90, 50, 80)
 
 let rect3 = rect2.aspectFilled(in: rect1)
 ```
+
+### Additional information
+
+* Created by: [Marco Jonker](http://www.cacadu.nl)
+* Swift version: [^3.*](http://www.swift.org)
+* Documentation: [cocoadocs](https://cocoapods.org/pods/CGRectAlignmentExtensions)

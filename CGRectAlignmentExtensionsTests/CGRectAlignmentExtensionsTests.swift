@@ -290,4 +290,24 @@ class RectAlignmentExtensionTests: XCTestCase {
         XCTAssertEqual(filledRect.size.width, 2250)
         XCTAssertEqual(filledRect.origin.x, -775)
     }
+    
+    func testInsettedByEdgeInsets_CreatedRectangleShouldAdaptToTheInsets() {
+        let rect = CGRect(x: 10, y: 10, width: 100, height: 120)
+        let insets = UIEdgeInsets(top: 5, left: 5, bottom: 15, right: 15)
+        let testRect = rect.insetted(by: insets)
+        XCTAssertEqual(testRect.minX, 15)
+        XCTAssertEqual(testRect.minY, 15)
+        XCTAssertEqual(testRect.maxX, 95)
+        XCTAssertEqual(testRect.maxY, 115)
+    }
+
+    func testInsetByEdgeInsets_RectangleShouldAdaptToTheInsets() {
+        var rect = CGRect(x: 10, y: 10, width: 100, height: 120)
+        let insets = UIEdgeInsets(top: 5, left: 5, bottom: 15, right: 15)
+        rect.inset(by: insets)
+        XCTAssertEqual(rect.minX, 15)
+        XCTAssertEqual(rect.minY, 15)
+        XCTAssertEqual(rect.maxX, 95)
+        XCTAssertEqual(rect.maxY, 115)
+    }
 }

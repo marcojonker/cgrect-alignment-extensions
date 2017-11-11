@@ -4,6 +4,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2017-11-11
+
+### Updated
+- Update documentation
+- Updated for swift 4
+
+### Added
+- Added inset by method
+- Added insetted by method
+
 ## [1.1.0] - 2017-01-27
 
 ### Updated

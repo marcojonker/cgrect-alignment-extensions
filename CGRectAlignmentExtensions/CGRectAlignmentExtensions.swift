@@ -50,87 +50,6 @@ public enum HorizontalAlignment  {
  */
 public extension CGRect {
     /**
-     Align the rectangle to a container rectangle horizontally
-     
-     - parameter container: Rectangle to align to
-     - parameter horizontalAlignment: Horizontal alignment method
-     */
-    public mutating func horizontalAlign(to container: CGRect, with alignment: HorizontalAlignment) {
-        switch (alignment) {
-        case .none:
-            break
-        case .leftOutside:
-            origin.x = container.origin.x - size.width;
-        case .leftInside:
-            origin.x = container.origin.x
-        case .center:
-            origin.x = container.midX - size.width * 0.5
-        case .rightInside:
-            origin.x = container.maxX - size.width;
-        case .rightOutside:
-            origin.x = container.maxX;
-        case .stretchInside:
-            origin.x = container.origin.x
-            size.width = container.size.width
-        }
-    }
-
-    /**
-     Create a rectangle horizontally aligned to a container
-     
-     - parameter container: Rectangle to align to
-     - parameter horizontalAlignment: Horizontal alignment method
-     
-     - returns: The aligned rectangle
-     */
-    public func horizontalAligned(to container: CGRect, with alignment: HorizontalAlignment) -> CGRect {
-        var result = self
-        result.horizontalAlign(to: container, with: alignment)
-        return result
-
-    }
-
-    /**
-     Align the rectangle to a container rectangle vertically
-     
-     - parameter container: Rectangle to align to
-     - parameter verticalAlignment: Vertical alignment method
-     */
-    public mutating func verticalAlign(to container: CGRect, with alignment: VerticalAlignment) {
-        switch (alignment) {
-        case .none:
-            break
-        case .topOutside:
-            origin.y = container.origin.y - size.height;
-        case .topInside:
-            origin.y = container.origin.y;
-        case .center:
-            origin.y = container.midY - size.height * 0.5
-        case .bottomInside:
-            origin.y = container.maxY - size.height;
-        case .bottomOutside:
-            origin.y = container.maxY;
-        case .stretchInside:
-            origin.y = container.origin.y
-            size.height = container.size.height
-        }
-    }
-    
-    /**
-     Create a rectangle vertically aligned to a container
-     
-     - parameter container: Rectangle to align to
-     - parameter verticalAlignment: Vertical alignment method
-     
-     - returns: The aligned rectangle
-     */
-    public func verticalAligned(to container: CGRect, with alignment: VerticalAlignment) -> CGRect {
-        var result = self
-        result.verticalAlign(to: container, with: alignment)
-        return result
-    }
-
-    /**
      Align the rectangle to a container rectangle
      
      - parameter container: Rectangle to align to
@@ -154,62 +73,7 @@ public extension CGRect {
     public func aligned(to container: CGRect, with horizontalAlignment: HorizontalAlignment, and verticalAligment: VerticalAlignment) -> CGRect {
         return  horizontalAligned(to: container, with: horizontalAlignment).verticalAligned(to: container, with: verticalAligment)
     }
-    
-    /**
-     Align the rectangle to the center of the container
-     
-     - parameter container: Rectangle to align to
-     */
-    public mutating func center(to container: CGRect) {
-        align(to: container, with: HorizontalAlignment.center, and: VerticalAlignment.center)
-    }
-    
-    /**
-     Create a rectangle that is aligned to the center of the container
-
-     - parameter container: Rectangle to align to
-     
-     - returns: Centered rectangle
-     */
-    public func centered(to container: CGRect) -> CGRect {
-        return aligned(to: container, with: HorizontalAlignment.center, and: VerticalAlignment.center)
-    }
-    
-    /**
-     Aspect fit a rectangle in a container rectangle
-     
-     If the width or height of the rectangle is zero,
-     the rectangle will only be centered to the container
-     
-     - parameter container: Rectangle to fit the rectangle into
-     */
-    public mutating func aspectFit(in container: CGRect) {
-        if(size.height != 0 && size.width != 0) {
-            let scale = min(container.size.width / size.width, container.size.height / size.height)
-            size.width *=  scale
-            size.height *= scale
-            center(to: container)
-        } else {
-            center(to: container)
-        }
-    }
-    
-    /**
-     Create a rectangle that is aspect fitted in a container rectangle
-     
-     If the width or height of the rectangle is zero,
-     the rectangle will only be centered to the container
-     
-     - parameter container: Rectangle to fit the rectangle into
-     
-     - returns: The aspect fitted rectangle
-     */
-    public func aspectFitted(in container: CGRect) -> CGRect {
-        var result = self
-        result.aspectFit(in: container)
-        return result
-    }
-    
+  
     /**
      Aspect fill the rectangle inside a container
      
@@ -249,6 +113,41 @@ public extension CGRect {
     }
     
     /**
+     Aspect fit a rectangle in a container rectangle
+     
+     If the width or height of the rectangle is zero,
+     the rectangle will only be centered to the container
+     
+     - parameter container: Rectangle to fit the rectangle into
+     */
+    public mutating func aspectFit(in container: CGRect) {
+        if(size.height != 0 && size.width != 0) {
+            let scale = min(container.size.width / size.width, container.size.height / size.height)
+            size.width *=  scale
+            size.height *= scale
+            center(to: container)
+        } else {
+            center(to: container)
+        }
+    }
+    
+    /**
+     Create a rectangle that is aspect fitted in a container rectangle
+     
+     If the width or height of the rectangle is zero,
+     the rectangle will only be centered to the container
+     
+     - parameter container: Rectangle to fit the rectangle into
+     
+     - returns: The aspect fitted rectangle
+     */
+    public func aspectFitted(in container: CGRect) -> CGRect {
+        var result = self
+        result.aspectFit(in: container)
+        return result
+    }
+
+    /**
      Create a square that is fitted inside the rectangle
      
      - returns: The square fitted rectangle
@@ -261,6 +160,66 @@ public extension CGRect {
             result.size.width = size.height
         }
         return result.centered(to: self)
+    }
+    
+    /**
+     Align the rectangle to the center of the container
+     
+     - parameter container: Rectangle to align to
+     */
+    public mutating func center(to container: CGRect) {
+        align(to: container, with: HorizontalAlignment.center, and: VerticalAlignment.center)
+    }
+    
+    /**
+     Create a rectangle that is aligned to the center of the container
+
+     - parameter container: Rectangle to align to
+     
+     - returns: Centered rectangle
+     */
+    public func centered(to container: CGRect) -> CGRect {
+        return aligned(to: container, with: HorizontalAlignment.center, and: VerticalAlignment.center)
+    }
+    
+    /**
+     Align the rectangle to a container rectangle horizontally
+     
+     - parameter container: Rectangle to align to
+     - parameter horizontalAlignment: Horizontal alignment method
+     */
+    public mutating func horizontalAlign(to container: CGRect, with alignment: HorizontalAlignment) {
+        switch (alignment) {
+        case .none:
+            break
+        case .leftOutside:
+            origin.x = container.origin.x - size.width;
+        case .leftInside:
+            origin.x = container.origin.x
+        case .center:
+            origin.x = container.midX - size.width * 0.5
+        case .rightInside:
+            origin.x = container.maxX - size.width;
+        case .rightOutside:
+            origin.x = container.maxX;
+        case .stretchInside:
+            origin.x = container.origin.x
+            size.width = container.size.width
+        }
+    }
+    
+    /**
+     Create a rectangle horizontally aligned to a container
+     
+     - parameter container: Rectangle to align to
+     - parameter horizontalAlignment: Horizontal alignment method
+     
+     - returns: The aligned rectangle
+     */
+    public func horizontalAligned(to container: CGRect, with alignment: HorizontalAlignment) -> CGRect {
+        var result = self
+        result.horizontalAlign(to: container, with: alignment)
+        return result
     }
     
     /**
@@ -280,5 +239,45 @@ public extension CGRect {
      */
     public func insetted(by insets: UIEdgeInsets) -> CGRect {
         return UIEdgeInsetsInsetRect(self, insets)
+    }
+    
+    /**
+     Align the rectangle to a container rectangle vertically
+     
+     - parameter container: Rectangle to align to
+     - parameter verticalAlignment: Vertical alignment method
+     */
+    public mutating func verticalAlign(to container: CGRect, with alignment: VerticalAlignment) {
+        switch (alignment) {
+        case .none:
+            break
+        case .topOutside:
+            origin.y = container.origin.y - size.height;
+        case .topInside:
+            origin.y = container.origin.y;
+        case .center:
+            origin.y = container.midY - size.height * 0.5
+        case .bottomInside:
+            origin.y = container.maxY - size.height;
+        case .bottomOutside:
+            origin.y = container.maxY;
+        case .stretchInside:
+            origin.y = container.origin.y
+            size.height = container.size.height
+        }
+    }
+    
+    /**
+     Create a rectangle vertically aligned to a container
+     
+     - parameter container: Rectangle to align to
+     - parameter verticalAlignment: Vertical alignment method
+     
+     - returns: The aligned rectangle
+     */
+    public func verticalAligned(to container: CGRect, with alignment: VerticalAlignment) -> CGRect {
+        var result = self
+        result.verticalAlign(to: container, with: alignment)
+        return result
     }
 }

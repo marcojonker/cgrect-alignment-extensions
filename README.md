@@ -9,7 +9,7 @@ CGRectAlignmentExtensions is a library that makes it easy to align rectangle to 
 ```
 target '<PROJECT_NAME>' do
   use_frameworks!
-  pod 'CGRectAlignmentExtensions', '>= 1.0'
+  pod 'CGRectAlignmentExtensions', '>= 2.0'
 end
 ```
 
@@ -29,6 +29,7 @@ For more information about installing cocoapods see: [cocoapos](https://cocoapod
 * aspectFilled
 * aspectFit
 * aspectFitted
+* aspectFittedSquare
 * center
 * centered
 * horizontalAlign
@@ -104,6 +105,16 @@ let rect1 = CGRect(10, 10, 100, 100)
 let rect2 = CGRect(90, 90, 50, 80)
 
 let rect3 = rect2.aspectFitted(in: rect1)
+```
+
+### aspectFittedSquare ###
+
+Create a square that is fitted inside the rectangle
+
+```swift
+let rect = CGRect(10, 10, 100, 100)
+
+let square = rect.aspectFittedSquare()
 ```
 
 ### center ###
@@ -197,5 +208,5 @@ let rect3 = rect2.verticalAligned(to: rect1, with: .stretchInside)
 ## Additional information ##
 
 * Created by: [Marco](http://www.cacadu.nl) and Arno
-* Swift version: [^3.*](http://www.swift.org)
-* Documentation: [cocoadocs](http://cocoadocs.org/docsets/CGRectAlignmentExtensions/1.0.5/)
+* Swift version: [^4.*](http://www.swift.org)
+* Documentation: [cocoadocs](http://cocoadocs.org/docsets/CGRectAlignmentExtensions/2.0.0/)

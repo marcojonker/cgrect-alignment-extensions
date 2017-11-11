@@ -29,6 +29,7 @@ For more information about installing cocoapods see: [cocoapos](https://cocoapod
 * aspectFilled
 * aspectFit
 * aspectFitted
+* aspectFittedSquare
 * center
 * centered
 * horizontalAlign
@@ -104,6 +105,16 @@ let rect1 = CGRect(10, 10, 100, 100)
 let rect2 = CGRect(90, 90, 50, 80)
 
 let rect3 = rect2.aspectFitted(in: rect1)
+```
+
+### aspectFittedSquare ###
+
+Create a square that is fitted inside the rectangle
+
+```swift
+let rect = CGRect(10, 10, 100, 100)
+
+let square = rect.aspectFittedSquare()
 ```
 
 ### center ###

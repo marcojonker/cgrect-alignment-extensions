@@ -263,4 +263,22 @@ public extension CGRect {
         return result.centered(to: self)
     }
     
+    /**
+    Inset a rect by specific UIEdgeInsets
+ 
+    - Parameter insets: The edge insets to be applied to the adjustment.
+     */
+    public mutating func inset(by insets: UIEdgeInsets) {
+        self =  self.insetted(by: insets)
+    }
+    
+    /**
+     Create an new rectange of a rectangle that is insetted by specific UIEdgeInsets
+     
+     - Parameter insets: The edge insets to be applied to the adjustment.
+     - Returns: A rectangle that is adjusted by the UIEdgeInsets structure passed in insets.
+     */
+    public func insetted(by insets: UIEdgeInsets) -> CGRect {
+        return UIEdgeInsetsInsetRect(self, insets)
+    }
 }

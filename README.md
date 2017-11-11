@@ -9,7 +9,7 @@ CGRectAlignmentExtensions is a library that makes it easy to align rectangle to 
 ```
 target '<PROJECT_NAME>' do
   use_frameworks!
-  pod 'CGRectAlignmentExtensions', '>= 1.0'
+  pod 'CGRectAlignmentExtensions', '>= 2.0'
 end
 ```
 
@@ -197,5 +197,5 @@ let rect3 = rect2.verticalAligned(to: rect1, with: .stretchInside)
 ## Additional information ##
 
 * Created by: [Marco](http://www.cacadu.nl) and Arno
-* Swift version: [^3.*](http://www.swift.org)
-* Documentation: [cocoadocs](http://cocoadocs.org/docsets/CGRectAlignmentExtensions/1.0.5/)
+* Swift version: [^4.*](http://www.swift.org)
+* Documentation: [cocoadocs](http://cocoadocs.org/docsets/CGRectAlignmentExtensions/2.0.0/)

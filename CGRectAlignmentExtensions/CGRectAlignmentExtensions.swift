@@ -238,7 +238,7 @@ public extension CGRect {
      - Returns: A rectangle that is adjusted by the UIEdgeInsets structure passed in insets.
      */
     public func insetted(by insets: UIEdgeInsets) -> CGRect {
-        return UIEdgeInsetsInsetRect(self, insets)
+        return self.inset(by: insets)
     }
     
     /**

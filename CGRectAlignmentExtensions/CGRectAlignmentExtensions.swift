@@ -56,7 +56,7 @@ public extension CGRect {
      - parameter horizontalAlignment: Horizontal alignment method
      - parameter verticalAlignment: Vertical alignment method
      */
-    public mutating func align(to container: CGRect, with horizontalAlignment: HorizontalAlignment, and verticalAligment: VerticalAlignment) {
+    mutating func align(to container: CGRect, with horizontalAlignment: HorizontalAlignment, and verticalAligment: VerticalAlignment) {
         horizontalAlign(to: container, with: horizontalAlignment)
         verticalAlign(to: container, with: verticalAligment)
     }
@@ -70,7 +70,7 @@ public extension CGRect {
      
      - returns: The aligned rectangle
      */
-    public func aligned(to container: CGRect, with horizontalAlignment: HorizontalAlignment, and verticalAligment: VerticalAlignment) -> CGRect {
+    func aligned(to container: CGRect, with horizontalAlignment: HorizontalAlignment, and verticalAligment: VerticalAlignment) -> CGRect {
         return  horizontalAligned(to: container, with: horizontalAlignment).verticalAligned(to: container, with: verticalAligment)
     }
   
@@ -84,7 +84,7 @@ public extension CGRect {
      
      - returns: The aspect filled rectangle
      */
-    public mutating func aspectFill(in container: CGRect) {
+    mutating func aspectFill(in container: CGRect) {
         if(size.height != 0 && size.width != 0) {
             let scale = max(container.size.width / size.width, container.size.height / size.height)
             size.width *= scale
@@ -106,7 +106,7 @@ public extension CGRect {
      
      - returns: The aspect filled rectangle
      */
-    public func aspectFilled(in container: CGRect) -> CGRect {
+    func aspectFilled(in container: CGRect) -> CGRect {
         var result = self
         result.aspectFill(in: container)
         return result
@@ -120,7 +120,7 @@ public extension CGRect {
      
      - parameter container: Rectangle to fit the rectangle into
      */
-    public mutating func aspectFit(in container: CGRect) {
+    mutating func aspectFit(in container: CGRect) {
         if(size.height != 0 && size.width != 0) {
             let scale = min(container.size.width / size.width, container.size.height / size.height)
             size.width *=  scale
@@ -141,7 +141,7 @@ public extension CGRect {
      
      - returns: The aspect fitted rectangle
      */
-    public func aspectFitted(in container: CGRect) -> CGRect {
+    func aspectFitted(in container: CGRect) -> CGRect {
         var result = self
         result.aspectFit(in: container)
         return result
@@ -152,7 +152,7 @@ public extension CGRect {
      
      - returns: The square fitted rectangle
      */
-    public func aspectFittedSquare() -> CGRect {
+    func aspectFittedSquare() -> CGRect {
         var result = self
         if(size.width < size.height) {
             result.size.height = size.width
@@ -167,7 +167,7 @@ public extension CGRect {
      
      - parameter container: Rectangle to align to
      */
-    public mutating func center(to container: CGRect) {
+    mutating func center(to container: CGRect) {
         align(to: container, with: HorizontalAlignment.center, and: VerticalAlignment.center)
     }
     
@@ -178,7 +178,7 @@ public extension CGRect {
      
      - returns: Centered rectangle
      */
-    public func centered(to container: CGRect) -> CGRect {
+    func centered(to container: CGRect) -> CGRect {
         return aligned(to: container, with: HorizontalAlignment.center, and: VerticalAlignment.center)
     }
     
@@ -188,7 +188,7 @@ public extension CGRect {
      - parameter container: Rectangle to align to
      - parameter horizontalAlignment: Horizontal alignment method
      */
-    public mutating func horizontalAlign(to container: CGRect, with alignment: HorizontalAlignment) {
+    mutating func horizontalAlign(to container: CGRect, with alignment: HorizontalAlignment) {
         switch (alignment) {
         case .none:
             break
@@ -216,7 +216,7 @@ public extension CGRect {
      
      - returns: The aligned rectangle
      */
-    public func horizontalAligned(to container: CGRect, with alignment: HorizontalAlignment) -> CGRect {
+    func horizontalAligned(to container: CGRect, with alignment: HorizontalAlignment) -> CGRect {
         var result = self
         result.horizontalAlign(to: container, with: alignment)
         return result
@@ -227,7 +227,7 @@ public extension CGRect {
  
     - Parameter insets: The edge insets to be applied to the adjustment.
      */
-    public mutating func inset(by insets: UIEdgeInsets) {
+    mutating func inset(by insets: UIEdgeInsets) {
         self =  self.insetted(by: insets)
     }
     
@@ -237,7 +237,7 @@ public extension CGRect {
      - Parameter insets: The edge insets to be applied to the adjustment.
      - Returns: A rectangle that is adjusted by the UIEdgeInsets structure passed in insets.
      */
-    public func insetted(by insets: UIEdgeInsets) -> CGRect {
+    func insetted(by insets: UIEdgeInsets) -> CGRect {
         return self.inset(by: insets)
     }
     
@@ -247,7 +247,7 @@ public extension CGRect {
      - parameter container: Rectangle to align to
      - parameter verticalAlignment: Vertical alignment method
      */
-    public mutating func verticalAlign(to container: CGRect, with alignment: VerticalAlignment) {
+    mutating func verticalAlign(to container: CGRect, with alignment: VerticalAlignment) {
         switch (alignment) {
         case .none:
             break
@@ -275,7 +275,7 @@ public extension CGRect {
      
      - returns: The aligned rectangle
      */
-    public func verticalAligned(to container: CGRect, with alignment: VerticalAlignment) -> CGRect {
+    func verticalAligned(to container: CGRect, with alignment: VerticalAlignment) -> CGRect {
         var result = self
         result.verticalAlign(to: container, with: alignment)
         return result

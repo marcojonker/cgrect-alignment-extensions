@@ -9,7 +9,7 @@ CGRectAlignmentExtensions is a library that makes it easy to align rectangle to 
 ```
 target '<PROJECT_NAME>' do
   use_frameworks!
-  pod 'CGRectAlignmentExtensions', '>= 2.0'
+  pod 'CGRectAlignmentExtensions', '>= 4.0'
 end
 ```
 
@@ -23,25 +23,25 @@ For more information about installing cocoapods see: [cocoapos](https://cocoapod
 
 ## FUNCTIONS ##
 
-* align
+* alignIt
 * aligned
-* aspectFill
+* aspectFillIt
 * aspectFilled
-* aspectFit
+* aspectFitIt
 * aspectFitted
 * aspectFittedSquare
-* center
+* centerIt
 * centered
-* horizontalAlign
+* horizontalAlignIt
 * horizontalAligned
-* inset
+* insetIt
 * insetted
-* verticalAlign
+* verticalAlignIt
 * verticaAligned
 
 ## EXAMPLES ##
 
-### align ###
+### alignIt ###
 
 Align a rectangle horizontally to the right outside and vertically to the center of another rectangle
 
@@ -49,7 +49,7 @@ Align a rectangle horizontally to the right outside and vertically to the center
 let rect1 = CGRect(10, 10, 100, 100)
 var rect2 = CGRect(90, 90, 50, 80)
 
-rect2.align(to: rect1, with: .leftOutside, and: .center)
+rect2.alignIt(to: rect1, with: .leftOutside, and: .center)
 ```
 
 ### aligned ###
@@ -63,7 +63,7 @@ let rect2 = CGRect(90, 90, 50, 80)
 let rect3 = rect2.aligned(to: rect1, with: .stretchInside, and: .bottomInside)
 ```
 
-### aspectFill ###
+### aspectFillIt ###
 
 Aspect fit a rectangle into a container
 
@@ -71,7 +71,7 @@ Aspect fit a rectangle into a container
 let rect1 = CGRect(10, 10, 100, 100)
 var rect2 = CGRect(90, 90, 50, 80)
 
-rect2.aspectFill(in: rect1)
+rect2.aspectFillIt(in: rect1)
 ```
 
 ### aspectFilled ###
@@ -85,7 +85,7 @@ let rect2 = CGRect(90, 90, 50, 80)
 let rect3 = rect2.aspectFilled(in: rect1)
 ```
 
-### aspectFit ###
+### aspectFitIt ###
 
 Aspect fit a rectangle into a container
 
@@ -93,7 +93,7 @@ Aspect fit a rectangle into a container
 let rect1 = CGRect(10, 10, 100, 100)
 var rect2 = CGRect(90, 90, 50, 80)
 
-rect2.aspectFit(in: rect1)
+rect2.aspectFitIt(in: rect1)
 ```
 
 ### aspectFitted ###
@@ -117,7 +117,7 @@ let rect = CGRect(10, 10, 100, 100)
 let square = rect.aspectFittedSquare()
 ```
 
-### center ###
+### centerIt ###
 
 Center a rectangle
 
@@ -125,7 +125,7 @@ Center a rectangle
 let rect1 = CGRect(10, 10, 100, 100)
 var rect2 = CGRect(90, 90, 50, 80)
 
-rect2.center(to: rect1)
+rect2.centerIt(to: rect1)
 ```
 
 ### centered ###
@@ -139,7 +139,7 @@ let rect2 = CGRect(90, 90, 50, 80)
 let rect3 = rect2.centered(to: rect1)
 ```
 
-### horizontalAlign ###
+### horizontalAlignIt ###
 
 Align a rectangle horizontally to the right outside of another rectangle
 
@@ -147,7 +147,7 @@ Align a rectangle horizontally to the right outside of another rectangle
 let rect1 = CGRect(10, 10, 100, 100)
 var rect2 = CGRect(90, 90, 50, 80)
 
-rect2.horizontalAligned(to: rect1, with: .rightOutside)
+rect2.horizontalAlignIt(to: rect1, with: .rightOutside)
 ```
 
 ### horizontalAligned ###
@@ -161,7 +161,7 @@ let rect2 = CGRect(90, 90, 50, 80)
 let rect3 = rect2.horizontalAligned(to: rect1, with: .stretchInside)
 ```
 
-### inset ###
+### insetIt ###
 
 Inset a rect by specific UIEdgeInsets
 
@@ -169,7 +169,7 @@ Inset a rect by specific UIEdgeInsets
 let rect = CGRect(10, 10, 100, 100)
 let insets = UIEdgeInsets(top: 5, left: 10, bottom: 15, right: 30)
 
-rect.inset(by: insets)
+rect.insetIt(by: insets)
 ```
 
 ### insetted ###
@@ -183,7 +183,7 @@ let insets = UIEdgeInsets(top: 5, left: 10, bottom: 15, right: 30)
 let rect2 = rect.insetted(by: insets)
 ```
 
-### verticalAlign ###
+### verticalAlignIt ###
 
 Align a rectangle horizontally to the top outside of another rectangle
 
@@ -191,7 +191,7 @@ Align a rectangle horizontally to the top outside of another rectangle
 let rect1 = CGRect(10, 10, 100, 100)
 var rect2 = CGRect(90, 90, 50, 80)
 
-rect2.verticalAlign(to: rect1, with: .topOutside)
+rect2.verticalAlignIt(to: rect1, with: .topOutside)
 ```
 
 ### verticalAligned ###
@@ -207,6 +207,6 @@ let rect3 = rect2.verticalAligned(to: rect1, with: .stretchInside)
 
 ## Additional information ##
 
-* Created by: [Marco](http://www.cacadu.nl) and Arno
-* Swift version: [^4.*](http://www.swift.org)
-* Documentation: [cocoadocs](http://cocoadocs.org/docsets/CGRectAlignmentExtensions/2.0.0/)
+* Created by: [Marco](http://www.cacadu.eu)
+* Swift version: [^5.*](http://www.swift.org)
+* Documentation: [cocoadocs](http://cocoadocs.org/docsets/CGRectAlignmentExtensions/3.0.0/)

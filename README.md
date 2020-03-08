@@ -9,7 +9,7 @@ CGRectAlignmentExtensions is a library that makes it easy to align rectangle to 
 ```
 target '<PROJECT_NAME>' do
   use_frameworks!
-  pod 'CGRectAlignmentExtensions', '>= 4.0'
+  pod 'CGRectAlignmentExtensions', '>= 3.0'
 end
 ```
 

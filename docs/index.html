@@ -8,6 +8,9 @@
     <script src="js/jquery.min.js" defer></script>
     <script src="js/jazzy.js" defer></script>
     
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
   </head>
   <body>
 
@@ -20,6 +23,12 @@
           CGRectAlignmentExtensions Docs
         </a>
          (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
       </p>
     
     
@@ -35,7 +44,7 @@
       <nav class="navigation">
         <ul class="nav-groups">
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Enums.html">Enums</a>
+            <a class="nav-group-name-link" href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/HorizontalAlignment.html">HorizontalAlignment</a>
@@ -58,58 +67,58 @@
       <article class="main-content">
 
         <section class="section">
-          <div class="section-content">
+          <div class="section-content top-matter">
             
-            <a href='#cgrectalignmentextensions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='cgrectalignmentextensions'>CGRectAlignmentExtensions</h1>
+            <h1 id='cgrectalignmentextensions' class='heading'>CGRectAlignmentExtensions</h1>
 
 <p>CGRectAlignmentExtensions is a library that makes it easy to align rectangle to each other. It contains function to align, aspect fit and aspect fill rectangles based a container rectangle.</p>
-<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>INSTALLATION</h2>
+<h2 id='installation' class='heading'>INSTALLATION</h2>
 
 <ol>
 <li>Create a file name &lsquo;Podfile&rsquo;</li>
 </ol>
 <pre class="highlight plaintext"><code>target '&lt;PROJECT_NAME&gt;' do
   use_frameworks!
-  pod 'CGRectAlignmentExtensions', '&gt;= 2.0'
+  pod 'CGRectAlignmentExtensions', '&gt;= 4.0'
 end
 </code></pre>
 
 <ol>
-<li>In the terminal in your project folder Run &#39;pod install&rsquo; from</li>
+<li>In the terminal in your project folder Run &lsquo;pod install&rsquo; from</li>
 </ol>
 <pre class="highlight plaintext"><code>pod install
 </code></pre>
 
 <p>For more information about installing cocoapods see: <a href="https://cocoapods.org">cocoapos</a></p>
-<a href='#functions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='functions'>FUNCTIONS</h2>
+<h2 id='functions' class='heading'>FUNCTIONS</h2>
 
 <ul>
-<li>align</li>
+<li>alignIt</li>
 <li>aligned</li>
-<li>aspectFill</li>
+<li>aspectFillIt</li>
 <li>aspectFilled</li>
-<li>aspectFit</li>
+<li>aspectFitIt</li>
 <li>aspectFitted</li>
 <li>aspectFittedSquare</li>
-<li>center</li>
+<li>centerIt</li>
 <li>centered</li>
-<li>horizontalAlign</li>
+<li>horizontalAlignIt</li>
 <li>horizontalAligned</li>
-<li>inset</li>
+<li>insetIt</li>
 <li>insetted</li>
-<li>verticalAlign</li>
+<li>verticalAlignIt</li>
 <li>verticaAligned</li>
 </ul>
-<a href='#examples' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='examples'>EXAMPLES</h2>
-<a href='#align' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='align'>align</h3>
+<h2 id='examples' class='heading'>EXAMPLES</h2>
+<h3 id='alignit' class='heading'>alignIt</h3>
 
 <p>Align a rectangle horizontally to the right outside and vertically to the center of another rectangle</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
-<span class="n">rect2</span><span class="o">.</span><span class="nf">align</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">leftOutside</span><span class="p">,</span> <span class="nv">and</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span>
+<span class="n">rect2</span><span class="o">.</span><span class="nf">alignIt</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">leftOutside</span><span class="p">,</span> <span class="nv">and</span><span class="p">:</span> <span class="o">.</span><span class="n">center</span><span class="p">)</span>
 </code></pre>
-<a href='#aligned' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='aligned'>aligned</h3>
+<h3 id='aligned' class='heading'>aligned</h3>
 
 <p>Create an new aligned rectangle horizontally stretched and vertically aligned to the bottom</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -117,15 +126,15 @@ end
 
 <span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">aligned</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">stretchInside</span><span class="p">,</span> <span class="nv">and</span><span class="p">:</span> <span class="o">.</span><span class="n">bottomInside</span><span class="p">)</span>
 </code></pre>
-<a href='#aspectfill' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='aspectfill'>aspectFill</h3>
+<h3 id='aspectfillit' class='heading'>aspectFillIt</h3>
 
 <p>Aspect fit a rectangle into a container</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
-<span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFill</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+<span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFillIt</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
 </code></pre>
-<a href='#aspectfilled' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='aspectfilled'>aspectFilled</h3>
+<h3 id='aspectfilled' class='heading'>aspectFilled</h3>
 
 <p>Create a new rectangle of a rectangle that is aspect filled into a container</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -133,15 +142,15 @@ end
 
 <span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFilled</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
 </code></pre>
-<a href='#aspectfit' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='aspectfit'>aspectFit</h3>
+<h3 id='aspectfitit' class='heading'>aspectFitIt</h3>
 
 <p>Aspect fit a rectangle into a container</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
-<span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFit</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+<span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFitIt</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
 </code></pre>
-<a href='#aspectfitted' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='aspectfitted'>aspectFitted</h3>
+<h3 id='aspectfitted' class='heading'>aspectFitted</h3>
 
 <p>Create a new rectangle of a rectangle that is aspect fitted into a container</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -149,22 +158,22 @@ end
 
 <span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">aspectFitted</span><span class="p">(</span><span class="nv">in</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
 </code></pre>
-<a href='#aspectfittedsquare' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='aspectfittedsquare'>aspectFittedSquare</h3>
+<h3 id='aspectfittedsquare' class='heading'>aspectFittedSquare</h3>
 
 <p>Create a square that is fitted inside the rectangle</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="k">let</span> <span class="nv">square</span> <span class="o">=</span> <span class="n">rect</span><span class="o">.</span><span class="nf">aspectFittedSquare</span><span class="p">()</span>
 </code></pre>
-<a href='#center' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='center'>center</h3>
+<h3 id='centerit' class='heading'>centerIt</h3>
 
 <p>Center a rectangle</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
-<span class="n">rect2</span><span class="o">.</span><span class="nf">center</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
+<span class="n">rect2</span><span class="o">.</span><span class="nf">centerIt</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
 </code></pre>
-<a href='#centered' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='centered'>centered</h3>
+<h3 id='centered' class='heading'>centered</h3>
 
 <p>Create a new centered rectangle</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -172,15 +181,15 @@ end
 
 <span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">centered</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">)</span>
 </code></pre>
-<a href='#horizontalalign' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='horizontalalign'>horizontalAlign</h3>
+<h3 id='horizontalalignit' class='heading'>horizontalAlignIt</h3>
 
 <p>Align a rectangle horizontally to the right outside of another rectangle</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
-<span class="n">rect2</span><span class="o">.</span><span class="nf">horizontalAligned</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">rightOutside</span><span class="p">)</span>
+<span class="n">rect2</span><span class="o">.</span><span class="nf">horizontalAlignIt</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">rightOutside</span><span class="p">)</span>
 </code></pre>
-<a href='#horizontalaligned' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='horizontalaligned'>horizontalAligned</h3>
+<h3 id='horizontalaligned' class='heading'>horizontalAligned</h3>
 
 <p>Create an new aligned rectangle horizontally stretched</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -188,15 +197,15 @@ end
 
 <span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">horizontalAligned</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">stretchInside</span><span class="p">)</span>
 </code></pre>
-<a href='#inset' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='inset'>inset</h3>
+<h3 id='insetit' class='heading'>insetIt</h3>
 
 <p>Inset a rect by specific UIEdgeInsets</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">let</span> <span class="nv">insets</span> <span class="o">=</span> <span class="kt">UIEdgeInsets</span><span class="p">(</span><span class="nv">top</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="nv">left</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">bottom</span><span class="p">:</span> <span class="mi">15</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span> <span class="mi">30</span><span class="p">)</span>
 
-<span class="n">rect</span><span class="o">.</span><span class="nf">inset</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">insets</span><span class="p">)</span>
+<span class="n">rect</span><span class="o">.</span><span class="nf">insetIt</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">insets</span><span class="p">)</span>
 </code></pre>
-<a href='#insetted' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='insetted'>insetted</h3>
+<h3 id='insetted' class='heading'>insetted</h3>
 
 <p>Create an new rectange of a rectangle that is insetted by specific UIEdgeInsets</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -204,15 +213,15 @@ end
 
 <span class="k">let</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="n">rect</span><span class="o">.</span><span class="nf">insetted</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="n">insets</span><span class="p">)</span>
 </code></pre>
-<a href='#verticalalign' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='verticalalign'>verticalAlign</h3>
+<h3 id='verticalalignit' class='heading'>verticalAlignIt</h3>
 
 <p>Align a rectangle horizontally to the top outside of another rectangle</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="k">var</span> <span class="nv">rect2</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">80</span><span class="p">)</span>
 
-<span class="n">rect2</span><span class="o">.</span><span class="nf">verticalAlign</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">topOutside</span><span class="p">)</span>
+<span class="n">rect2</span><span class="o">.</span><span class="nf">verticalAlignIt</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">topOutside</span><span class="p">)</span>
 </code></pre>
-<a href='#verticalaligned' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='verticalaligned'>verticalAligned</h3>
+<h3 id='verticalaligned' class='heading'>verticalAligned</h3>
 
 <p>Create an new aligned rectangle vertical stretched</p>
 <pre class="highlight swift"><code><span class="k">let</span> <span class="nv">rect1</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -220,12 +229,12 @@ end
 
 <span class="k">let</span> <span class="nv">rect3</span> <span class="o">=</span> <span class="n">rect2</span><span class="o">.</span><span class="nf">verticalAligned</span><span class="p">(</span><span class="nv">to</span><span class="p">:</span> <span class="n">rect1</span><span class="p">,</span> <span class="nv">with</span><span class="p">:</span> <span class="o">.</span><span class="n">stretchInside</span><span class="p">)</span>
 </code></pre>
-<a href='#additional-information' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='additional-information'>Additional information</h2>
+<h2 id='additional-information' class='heading'>Additional information</h2>
 
 <ul>
-<li>Created by: <a href="http://www.cacadu.nl">Marco</a> and Arno</li>
-<li>Swift version: <a href="http://www.swift.org">^4.*</a></li>
-<li>Documentation: <a href="http://cocoadocs.org/docsets/CGRectAlignmentExtensions/2.0.0/">cocoadocs</a></li>
+<li>Created by: <a href="http://www.cacadu.eu">Marco</a></li>
+<li>Swift version: <a href="http://www.swift.org">^5.*</a></li>
+<li>Documentation: <a href="http://cocoadocs.org/docsets/CGRectAlignmentExtensions/3.0.0/">cocoadocs</a></li>
 </ul>
 
           </div>
@@ -235,8 +244,8 @@ end
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="https://github.com/marcojonker/cgrect-alignment-extensions" target="_blank" rel="external">Marco</a>. All rights reserved. (Last updated: 2017-11-11)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2020 <a class="link" href="https://www.cacadu.eu/opensource/" target="_blank" rel="external">Marco</a>. All rights reserved. (Last updated: 2020-03-08)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>

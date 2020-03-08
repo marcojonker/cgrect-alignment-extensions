@@ -7,6 +7,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Marco" => "mj.jonker@live.nl" } 
   s.platform     = :ios, "11.0"
+  s.swift_version = '5.0'
   s.source_files = "CGRectAlignmentExtensions/**/*.{swift}"
   s.source       = { :git => "https://github.com/marcojonker/cgrect-alignment-extensions.git", :tag => "#{s.version}" }
 end

@@ -4,6 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [3.0.0] - 2020-03-08
+
+### Updated
+- Update documentation
+- Updated for swift 5
+- Updated name of mutating functions because CGRect now provides 'inset' by default. All mutating functions are now extended with 'It'
+
 ## [2.0.0] - 2017-11-11
 
 ### Updated
